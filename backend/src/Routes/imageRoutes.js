@@ -15,7 +15,7 @@ const imageRoute = Router();
  *       content:
  *         application/json:
  *           schema:
- *             type: image
+ *             type: object
  *             properties:
  *               image:
  *                 type: string
@@ -104,7 +104,7 @@ imageRoute.get('/allimages', async (req, res) => {
 *       content:
 *         application/json:
 *           schema:
-*             type: image
+*             type: object
 *             properties:
 *               newTitle:
 *                 type: string 
@@ -132,6 +132,26 @@ imageRoute.put('/image/:id', async (req, res) => {
         res.status(500).json({error: `Error ${error.message}`})
     }
 });
+
+/**
+ * @swagger
+* /api/image/{id}:
+*   delete:
+*     summary: Delete Image
+*     tags: {images}
+*     parameters:
+*       - in: path
+*         name: id
+*         required: true
+*         description: Image Id
+*     responses:
+*       200:
+*         description: Image was Successfully Deleted.
+*       400:
+*         description: Image not found.
+*       500:
+*         description: Error deleting image.
+*/
 
 imageRoute.delete('/image/:id', async (req, res) => {
     try{
