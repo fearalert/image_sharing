@@ -27,6 +27,6 @@
         "server": "file:",
         "swagger-jsdoc": "^6.2.8",
         "swagger-ui-express": "^5.0.1",
-        "vercel": "^35.0.0"
+        "vercel": "^37.1.2"
     }
 }
