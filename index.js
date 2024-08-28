@@ -64,7 +64,7 @@ const options = {
           description: "Local server"
         },
         {
-          url: "https://backend-sigma-dun.vercel.app",
+          url: "https://image-sharing-222.vercel.app/",
           description: "Live server"
         },
       ]
