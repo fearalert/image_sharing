@@ -6,7 +6,7 @@ import mongoose from 'mongoose';
 import { v2 as cloudinary } from 'cloudinary';
 import bodyParser from 'body-parser'
 
-import imageRoute from './src/Routes/imageRoutes.js'; 
+import imageRoute from './src/Routes/imageRoute.js'; 
 
 import swaggerJsdoc from 'swagger-jsdoc'
 import swaggerUi from 'swagger-ui-express'
