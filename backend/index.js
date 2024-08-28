@@ -63,10 +63,10 @@ const options = {
           url: "http://localhost:4000/",
           description: "Local server"
         },
-        // {
-        //   url: "http://localhost:4000/",
-        //   description: "Live server"
-        // },
+        {
+          url: "https://image-sharing-3uqsyojnh-fearalerts-projects.vercel.app/",
+          description: "Live server"
+        },
       ]
     },
     apis: ['./src/**/*.js'],
