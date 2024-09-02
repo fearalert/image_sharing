@@ -1,15 +1,23 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import AppLayout from './Layout';
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import Layout from './Layout'
+import { AppContextProvider } from './Context/AppContext'
+import ImageCard from "./components/ImageCard"
+import ImageUploader from "./components/ImageUploader"
+
 
 const App = () => {
-
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<AppLayout />} />
-        <Route path="/upload" element={<div>This is a jpload Route</div>} />
-      </Routes>
-    </Router>
+    <AppContextProvider>
+      <Router>
+        <Routes>
+          <Route path='/' element={<Layout />} >
+            <Route path='/' element={<ImageCard />} />
+            <Route path='/upload' element={<ImageUploader />} />
+          </Route>
+        </Routes>
+      </Router>
+    </AppContextProvider>
   )
 }
 
