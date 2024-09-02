@@ -23,7 +23,14 @@ console.log('MONGODB_URL:', process.env.MONGODB_URI);
 console.log('PORT:', process.env.PORT);
 
 app.use(morgan("dev"));
-app.use(cors());
+
+const corsOptions = {
+  origin: ['http://localhost:5173'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,
+  optionsSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
 
 const URI = process.env.MONGODB_URI;
 
