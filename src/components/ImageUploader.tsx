@@ -27,8 +27,6 @@ const ImageUploader = () => {
     }
 
     function handleTitleChange(event: ChangeEvent<HTMLInputElement>): void {
-
-
         settitle(event.target.value)
     }
 
@@ -54,7 +52,8 @@ const ImageUploader = () => {
                 image: file
             }
 
-            await axios.post("https://image-sharing-222.vercel.app/api/upload", payload)
+            // await axios.post("https://image-sharing-222.vercel.app/api/upload", payload)
+            await axios.post("http://localhost:4000/api/upload", payload)
 
             setfile("")
             settitle("")
