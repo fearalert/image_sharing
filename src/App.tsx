@@ -2,8 +2,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Layout from './Layout'
 import { AppContextProvider } from './Context/AppContext'
-import ImageCard from "./components/ImageCard"
-import ImageUploader from "./components/ImageUploader"
+import ImageCard from "./components/ImageCard/ImageCard"
+import ImageUploader from "./components/Uploader/ImageUploader"
 
 
 const App = () => {

@@ -1,9 +1,9 @@
 import axios from 'axios'
 import { ChangeEvent, FormEvent, useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import Loader from './Loader'
-import AppContext, { AppContextValue } from '../Context/AppContext'
-import convertToBase64 from '../utils/ConvertTobase64'
+import Loader from '../Loaders/Loader'
+import AppContext, { AppContextValue } from '../../Context/AppContext'
+import convertToBase64 from '../../utils/ConvertTobase64'
 
 const ImageUploader = () => {
 

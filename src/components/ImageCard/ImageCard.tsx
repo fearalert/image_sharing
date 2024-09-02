@@ -1,10 +1,10 @@
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { SlOptionsVertical } from "react-icons/sl";
 import { FC, useContext } from 'react';
-import AppContext, { AppContextValue } from '../Context/AppContext';
-import Modal from './Modal';
-import ImageModal from './ImageModal';
-import SkeletonLoader from './SkeletonLoader';
+import AppContext, { AppContextValue } from '../../Context/AppContext';
+import Modal from '../Modal/Modal';
+import ImageModal from '../Modal/ImageModal';
+import SkeletonLoader from '../Loaders/SkeletonLoader';
 
 const ImageCard: FC = () => {
     const context = useContext<AppContextValue | undefined>(AppContext);

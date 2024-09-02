@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 
 import { GrNext, GrPrevious } from "react-icons/gr"
-import AppContext, { AppContextValue } from '../Context/AppContext'
+import AppContext, { AppContextValue } from '../../Context/AppContext'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 
