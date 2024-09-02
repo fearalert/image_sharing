@@ -54,7 +54,7 @@ const ImageUploader = () => {
                 image: file
             }
 
-            await axios.post("https://server-topaz-seven-37.vercel.app/api/upload", payload)
+            await axios.post("https://image-sharing-222.vercel.app/api/upload", payload)
 
             setfile("")
             settitle("")
