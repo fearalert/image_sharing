@@ -3,6 +3,7 @@ import { ChangeEvent, FormEvent, useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Loader from './Loader'
 import AppContext, { AppContextValue } from '../Context/AppContext'
+import convertToBase64 from '../utils/ConvertTobase64'
 
 const ImageUploader = () => {
 
@@ -89,16 +90,5 @@ const ImageUploader = () => {
 
 export default ImageUploader
 
-function convertToBase64(file: File) {
-    return new Promise((resolve, reject) => {
-        const fileReader = new FileReader();
-        fileReader.readAsDataURL(file);
-        fileReader.onload = () => {
-            resolve(fileReader.result);
-        }
-        fileReader.onerror = (error) => {
-            reject(error);
-        }
-    })
-}
+
 
