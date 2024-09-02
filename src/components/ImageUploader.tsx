@@ -41,6 +41,45 @@ const ImageUploader = () => {
 
     }
 
+    // async function handleUploadImage(event: FormEvent<HTMLFormElement>): Promise<void> {
+    //     event.preventDefault();
+        
+    //     if (!file) return;
+    
+    //     setloading(true);
+    
+    //     try {
+    //         const formData = new FormData();
+    //         formData.append('title', title);
+    //         formData.append('image', file);
+
+    //         console.log("Form Data", formData)
+            
+            
+    //         // Use the appropriate endpoint URL for production or development
+    //         const response = await axios.post("http://localhost:4000/api/upload", formData, {
+    //             headers: {
+    //                 'Content-Type': 'multipart/form-data',
+    //             },
+    //         });
+    
+    //         console.log('Upload successful:', response.data);
+            
+    //         // Clear form states and update key
+    //         setfile("");  // Use null if file is not an empty string
+    //         settitle("");
+    //         setkey(prevKey => prevKey + 1);
+    //         context?.setrefresh(prevKey => prevKey + 1);
+    
+    //         navigate("/");
+            
+    //     } catch (error) {
+    //         console.error('Error uploading image:', error);
+    //     } finally {
+    //         setloading(false);
+    //     }
+    // }
+    
     async function handleUploadImage(event: FormEvent<HTMLFormElement>): Promise<void> {
         event.preventDefault()
         try {
@@ -52,6 +91,8 @@ const ImageUploader = () => {
                 title: title,
                 image: file
             }
+
+            console.log("Payload", payload)
 
             // await axios.post("https://image-sharing-222.vercel.app/api/upload", payload)
             await axios.post("http://localhost:4000/api/upload", payload)

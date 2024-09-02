@@ -34,16 +34,17 @@ export const AppContextProvider: FC<AppContextProps> = ({ children }) => {
     const [selectedImageId, setselectedImageId] = useState<string | null>(null);
     const [selectedImageTitle, setselectedImageTitle] = useState<string | null>(null);
     const [refresh, setrefresh] = useState<number>(0);
-    const [AllImages, setAllImages] = useState<ImageData[]>([]); // Initialize as an empty array
+    const [AllImages, setAllImages] = useState<ImageData[]>([]);
     const [isLoading, setisLoading] = useState<boolean>(false);
 
     const baseUrl = "http://localhost:4000";
+    
 
     const getAllImages = async () => {
         try {
             const response = await axios.get(`${baseUrl}/api/allImages`);
-            console.log("Fetched Images Data:", response.data); // Debug: Check the structure
-            setAllImages(response.data.Allimages || []); // Extract and set the images array
+            console.log("Fetched Images Data:", response.data);
+            setAllImages(response.data.Allimages || []); 
         } catch (error) {
             console.log("Error fetching images:", error);
         }
@@ -68,7 +69,7 @@ export const AppContextProvider: FC<AppContextProps> = ({ children }) => {
         try {
             setisLoading(true);
             await axios.delete(`${baseUrl}/api/image/${selectedImageId}`);
-            setAllImages(prev => prev.filter(img => img._id !== selectedImageId)); // Update locally
+            setAllImages(prev => prev.filter(img => img._id !== selectedImageId));
             setselectedImageId(null);
             setselectedImageTitle(null);
             setisLoading(false);
